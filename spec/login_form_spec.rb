@@ -6,7 +6,7 @@
 
 describe "Forms" do
     it "login com sucesso" do
-        visit "https://training-wheels-protocol.herokuapp.com/login"
+        visit "/login"
         
         sleep(3)
         fill_in 'username', with: 'stark'
@@ -20,7 +20,7 @@ describe "Forms" do
     end
 
     it "login com senha incorreta" do
-        visit "https://training-wheels-protocol.herokuapp.com/login"
+        visit "/login"
         
         sleep(3)
         fill_in 'username', with: 'stark'
@@ -33,7 +33,7 @@ describe "Forms" do
     end
 
     it "login com usuário não cadastrado" do
-        visit "https://training-wheels-protocol.herokuapp.com/login"
+        visit "/login"
         
         sleep(3)
         fill_in 'username', with: 'star'
