@@ -20,6 +20,14 @@ RSpec.configure do |config|
     page.current_window.resize_to(1280,800)
   end
 
+  # Captura de tela
+  config.after(:example) do |e|
+    # Retirando caracter especial e substituindo espaços pelo _
+    # Com o if são casos que falharam
+    name = e.description.gsub(/[^A-Za-z0-9]/,'').tr(' ','_')
+    page.save_screenshot('log/' + name + '.png') if e.exception
+  end
+
 end
 
 Capybara.configure do |config|
